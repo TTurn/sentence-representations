@@ -1,6 +1,6 @@
 import torch
 from utils.optimizer import MODEL_CLASS, get_bert_config_tokenizer
-config, tokenizer = get_bert_config_tokenizer("bertbase")
+config, tokenizer = get_bert_config_tokenizer("roberta")
 from models.Transformers import PairSupConBert
 
 path = ""
