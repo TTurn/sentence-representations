@@ -3,7 +3,7 @@ from utils.optimizer import MODEL_CLASS, get_bert_config_tokenizer
 config, tokenizer = get_bert_config_tokenizer("bertbase")
 from models.Transformers import PairSupConBert
 
-path = "/data/tuhailong/sentence-representations/PairSupCon/results/pairsupcon.HardNeg.epoch5.bertbase.train.tsv.lr5e-06.lrscale100.bs32.tmp0.05.beta1.0.seed0/pscbert_epoch_4"
+path = ""
 model = PairSupConBert.from_pretrained(path)
 
 def cosine_similarity(vector1, vector2):
@@ -47,7 +47,7 @@ def run(sentence1, sentence2):
     score = cosine_similarity(embeddings1[0], embeddings2[0])
     return score
 
-with open("/data/tuhailong/trans-encoder/test.txt","r")as f, open("result.txt","w")as fw:
+with open("test.txt","r")as f, open("result.txt","w")as fw:
     for i, line in enumerate(f):
         if i%1000==0:print(i)
         line_lst = line.strip().split("\t")
